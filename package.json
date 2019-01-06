@@ -1,0 +1,32 @@
+{
+  "name": "skylark-fw-model",
+  "version": "0.9.0",
+  "description": "The skylark model layer framework library.",
+  "main": "-",
+  "scripts": {
+    "build": "sbundle build ."
+  },
+  "homepage": "www.skylarkjs.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skylarkjs/skylark-fw-model.git"
+  },
+  "keywords": [
+    "skylark",
+    "skylarkjs",
+    "javacript",
+    "html5",
+    "library",
+    "framework",
+    "model"
+  ],
+  "author": "Hudaokeji Co.,Ltd",
+  "license": "MIT",
+  "bugs": "https://github.com/skylarkjs/skylark/issues",
+  "dependencies": {
+    "skylark-langx": "git+https://github.com/skylarklangx/skylark-langx.git#master"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
