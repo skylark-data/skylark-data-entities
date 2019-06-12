@@ -1,9 +1,0 @@
-/**
- * skylark-fw-model - The skylark model layer framework library.
- * @author Hudaokeji Co.,Ltd
- * @version v0.9.0
- * @link www.skylarkjs.org
- * @license MIT
- */
-define(["skylark-langx/langx","./models"],function(t,r){var e=function(t,r){var e=r.error;r.error=function(s){e&&e.call(r.context,t,s,r),t.trigger("error",t,s,r)}},s=t.Stateful.inherit({sync:function(){return r.sync.apply(this,arguments)},matches:function(r){return t.isMatch(this.attributes,r)},fetch:function(r){var s=this,i=(r=t.mixin({parse:!0},r)).success;return r.success=function(t){var e=r.parse?s.parse(t,r):t;if(!s.set(e,r))return!1;i&&i.call(r.context,s,t,r),s.trigger("sync",s,t,r)},e(this,r),this.sync("read",this,r)},save:function(r,s,i){var n;null==r||"object"==typeof r?(n=r,i=s):(n={})[r]=s;var c=(i=t.mixin({validate:!0,parse:!0},i)).wait;if(n&&!c){if(!this.set(n,i))return!1}else if(!this._validate(n,i))return!1;var a=this,u=i.success,o=this.attributes;i.success=function(r){a.attributes=o;var e=i.parse?a.parse(r,i):r;if(c&&(e=t.mixin({},n,e)),e&&!a.set(e,i))return!1;u&&u.call(i.context,a,r,i),a.trigger("sync",a,r,i)},e(this,i),n&&c&&(this.attributes=t.mixin({},o,n));var h=this.isNew()?"create":i.patch?"patch":"update";"patch"!==h||i.attrs||(i.attrs=n);var l=this.sync(h,this,i);return this.attributes=o,l},destroy:function(r){var s=this,i=(r=r?t.clone(r):{}).success,n=r.wait,c=function(){s.stopListening(),s.trigger("destroy",s,s.collection,r)};r.success=function(t){n&&c(),i&&i.call(r.context,s,t,r),s.isNew()||s.trigger("sync",s,t,r)};var a=!1;return this.isNew()?t.defer(r.success):(e(this,r),a=this.sync("delete",this,r)),n||c(),a},url:function(){var r=t.result(this,"urlRoot")||t.result(this.collection,"url")||urlError();if(this.isNew())return r;var e=this.get(this.idAttribute);return r.replace(/[^\/]$/,"$&/")+encodeURIComponent(e)},parse:function(t,r){return t}});return r.Entity=s});
-//# sourceMappingURL=sourcemaps/Entity.js.map
