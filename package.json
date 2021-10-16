@@ -4,7 +4,7 @@
   "description": "The skylark entityframework library.",
   "main": "-",
   "scripts": {
-    "build": "sbundle build ."
+    "build": "slib build ."
   },
   "homepage": "www.skylarkjs.org",
   "repository": {

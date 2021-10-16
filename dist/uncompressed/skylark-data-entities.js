@@ -75,7 +75,7 @@
   factory(define,require);
 
   if (!isAmd) {
-    var skylarkjs = require("skylark-langx/skylark");
+    var skylarkjs = require("skylark-langx-ns");
 
     if (isCmd) {
       module.exports = skylarkjs;
@@ -619,7 +619,7 @@ define('skylark-data-entities/Collection',[
 
 		// Define how to uniquely identify entities in the collection.
 		entityId: function(attrs) {
-		  return attrs[this.entity.prototype.idAttribute || 'id'];
+		  return attrs[this.entity.prototype && this.entity.prototype.idAttribute || 'id'];
 		},
 
 		// Private method to reset all internal state. Called when the collection

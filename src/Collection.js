@@ -352,7 +352,7 @@ define([
 
 		// Define how to uniquely identify entities in the collection.
 		entityId: function(attrs) {
-		  return attrs[this.entity.prototype.idAttribute || 'id'];
+		  return attrs[this.entity.prototype && this.entity.prototype.idAttribute || 'id'];
 		},
 
 		// Private method to reset all internal state. Called when the collection
